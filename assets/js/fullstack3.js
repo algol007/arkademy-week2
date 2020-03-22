@@ -11,23 +11,34 @@
 
 const data = [123, 9, 27];
 
-function sum([...arguments]) {
-  let total = 0;
-  arguments.map(number => (total = total + number));
-  console.log(total);
-  let arguments2 = Array.from(String(total), Number);
-  let total2 = 0;
-  arguments2.map(number => (total2 = total2 + number));
-  console.log(total2);
-  let arguments3 = Array.from(String(total2), Number);
-  let total3 = 0;
-  arguments3.map(number => (total3 = total3 + number));
-  return total3;
+function sumArray(data) {
+  let data1 = [...data];
+  let data2 = [];
+  for (let i = 0; i < data.length; i++) {
+    data2 = data1.reduce((a, b) => a + b);
+    data1 = Array.from(String(data2), Number);
+    console.log(data1);
+  }
 }
 
-const result = sum(data);
+sumArray(data);
+// function sum([...arguments]) {
+//   let total = 0;
+//   arguments.map(number => (total = total + number));
+//   console.log(total);
+//   let arguments2 = Array.from(String(total), Number);
+//   let total2 = 0;
+//   arguments2.map(number => (total2 = total2 + number));
+//   console.log(total2);
+//   let arguments3 = Array.from(String(total2), Number);
+//   let total3 = 0;
+//   arguments3.map(number => (total3 = total3 + number));
+//   return total3;
+// }
 
-console.log(result);
+// const result = sum(data);
+
+// console.log(result);
 
 //2. Buatlah program yang memiliki parameter sebuah matriks(array 2 dimensi) dan memiliki return berupa transpose dari matriks tersebut.
 // Contoh input:
